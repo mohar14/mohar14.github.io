@@ -85,7 +85,7 @@ analytics:
 # Site Author
 author:
   name             : "Mohar Dey"
-  avatar           : "/images/bio-pic-2.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/images/modo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Data Science Portfolio"
   location         : "Chicago, IL"
   email            : "mohar14@gmail.com"
