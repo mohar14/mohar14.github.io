@@ -12,7 +12,7 @@ locale                   : "en-US"
 title                    : "Home"
 title_separator          : "-"
 name                     : "Mohar Dey"
-description              : "MSBA, University of Illinois"
+description              : #
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -86,7 +86,7 @@ analytics:
 author:
   name             : "Mohar Dey"
   avatar           : "/images/modo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Data Science Portfolio"
+  bio              : "MSBA, University of Illinois"
   location         : "Chicago, IL"
   email            : "mohar14@gmail.com"
   uri              :
