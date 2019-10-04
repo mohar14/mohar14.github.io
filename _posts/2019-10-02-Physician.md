@@ -9,8 +9,11 @@ This is going to be a two-part post, in this post I describe the problem and wal
 ## Problem Statement
 Online physician reviews have become increasingly important over the past few years, with more and more patients turning to them in order to select their physician. A 2019 survey indicated that 94% of respondents use online reviews to evaluate physicians at least sometimes **Figure 1**, with 72% of them using the reviews as the first step to finding an new provider **Figure 2**.
 
+<img src="/images/PhysicianReviews/figure1.png" alt="figure1">
+*/
 <figure class="half">
-    <a href="/images/PhysicianReviews/figure1.png"><img src="/images/PhysicianReviews/figure1.png"></a>
-    <a href="/images/PhysicianReviews/figure2.png"><img src="/images/PhysicianReviews/figure2.png"></a>
-    <figcaption>Caption describing these two images.</figcaption>
+    #<a href="/images/PhysicianReviews/figure1.png"><img src="/images/PhysicianReviews/figure1.png"></a>
+    #<a href="/images/PhysicianReviews/figure2.png"><img src="/images/PhysicianReviews/figure2.png"></a>
+    #<figcaption>Caption describing these two images.</figcaption>
 </figure>
+/*
