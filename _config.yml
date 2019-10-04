@@ -13,7 +13,7 @@ title                    : "Home"
 title_separator          : "-"
 name                     : "Mohar Dey"
 description              : #
-url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : "https://mohar14.github.io"
 baseurl                  :  "/mohar14.github.io"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
