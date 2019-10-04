@@ -11,7 +11,7 @@ Online physician reviews have become increasingly important over the past few ye
 
 
 <figure class="half">
-    <img src="/images/PhysicianReviews/figure1.png"></a>
-    <img src="/images/PhysicianReviews/figure2.png"></a>
+    <img src="/images/PhysicianReviews/figure1.png">
+    <img src="/images/PhysicianReviews/figure2.png">
     <figcaption>Caption describing these two images.</figcaption>
 </figure>
