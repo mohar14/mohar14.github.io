@@ -6,8 +6,10 @@ author_profile: true
 header:
   image: #"/images/fort point.png"
 ---
-{% for portfolio in site.posts %}
-  <h2>
-    {{ posts.title }}
-  </h2>
-{% endfor %}
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
