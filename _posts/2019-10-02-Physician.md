@@ -28,7 +28,6 @@ I will use the selenium package which you can install using pip either from your
 Now I will import all the necessary dependencies for selenium and *pandas* which I will use to create a dataframe.
 
 ```python
-
 import selenium
 import pandas as pd
 from selenium.webdriver.common.keys import Keys
@@ -38,6 +37,10 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import WebDriverException
 import time
 import csv
-
 ```  
 You would also need to download and extract the latest [chromedriver](https://chromedriver.storage.googleapis.com/index.html?path=2.24/). Chromedriver allows python to fire up Google Chrome within your local machine which is then used to access any site you would like to scrape.   
+
+```python
+chrome_path = "C:/Users/snigd/Dropbox/IDS 594/chromedriver_win32/chromedriver.exe"
+driver = webdriver.Chrome(chrome_path)
+```
