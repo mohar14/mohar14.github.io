@@ -41,6 +41,6 @@ import csv
 You would also need to download and extract the latest [chromedriver](https://chromedriver.storage.googleapis.com/index.html?path=2.24/). Chromedriver allows python to fire up Google Chrome within your local machine which is then used to access any site you would like to scrape.   
 
 ```python
-chrome_path = "C:/Users/snigd/Dropbox/IDS 594/chromedriver_win32/chromedriver.exe"
+chrome_path = "yourpathtochromedriver/chromedriver.exe"
 driver = webdriver.Chrome(chrome_path)
 ```
