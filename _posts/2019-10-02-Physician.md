@@ -20,12 +20,12 @@ In the competitive healthcare marketplace, it is thus of crucial importance that
 
 This is an unique and interesting problem to solve but the data to solve this problem is not readily available. In this section I will discuss the python scraper I wrote that collects data from a popular physician website.
 
-I will use the selenium package which you can install using pip either from your jupyter notebook or the command line.
+I will use the *selenium* package which you can install using pip either from your jupyter notebook or the command line.
 
 ```python
 !pip install selenium
 ```
-Now I will import all the necessary dependencies for selenium and *pandas* which I will use to create a dataframe.
+Now I will import all the necessary dependencies for *selenium* and *pandas* to create a dataframe.
 
 ```python
 import selenium
@@ -38,9 +38,12 @@ from selenium.common.exceptions import WebDriverException
 import time
 import csv
 ```  
-You would also need to download and extract the latest [chromedriver](https://chromedriver.storage.googleapis.com/index.html?path=2.24/). Chromedriver allows python to fire up Google Chrome within your local machine which is then used to access any site you would like to scrape.   
+You would also need to download and extract the latest [chromedriver](https://chromedriver.storage.googleapis.com/index.html?path=2.24/). Chromedriver allows python to fire up Google Chrome within your local machine which is then used to access the site you would like to scrape.   
 
 ```python
 chrome_path = "yourpathtochromedriver/chromedriver.exe"
 driver = webdriver.Chrome(chrome_path)
 ```
+Lets first understand the scope of this process. I would like my scraper to automatically scrape demographic information and reviews for individual doctors from [Healthgrades](https://www.healthgrades.com). The following screenshot shows the search results for all doctors in Obstetrics and Gynaecology in Illinois. I want my scraper to loop over all the search results automatically and for each doctor collect the required information.
+
+<img src="{{ site.url }}{{ site.baseurl }}/images/PhyscianReviews/figure3.png">
