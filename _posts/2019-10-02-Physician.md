@@ -63,7 +63,7 @@ age=[]
 score=[]
 metaReview=[]
 ```
-Next I use selenium's *.get* command navigate to the page we are scraping. After reaching the page I would like to loop over multiple pages. The following chunk of code does exactly that. Not only does it loop over all pages but also stores the url for each page in a list.
+Next I use selenium's '*.get*' command to navigate to the page I am scraping. To loop over multiple pages, I use the xpath of the element that redirects me to the next page of the website. Note this xpath will differ by website and can be found by right clicking on target element and inspecting the elements tab.  The following code clicks on the xpath (in this case on page 2) and stores the url for each page in a list.
 
 ```python
 url=driver.get("pageurl")
@@ -76,3 +76,31 @@ for i in range(11):
     pageLinks.append(source)
     time.sleep(2)
 ```
+Now for each page, I store the urls of the individual doctor's page in another list. I use a regular expression to remove all unwanted characters from this list of links. I will use this list to iterate through each Physician's page to collect the demographic information and reviews.
+
+```python
+
+#Getting all the individual doctor page links
+    list_of_hrefs = []
+
+    doctor_list = driver.find_elements_by_class_name("uCard")
+
+    for block in doctor_list:
+        elements = block.find_elements_by_tag_name("a")
+        for el in elements:
+            list_of_hrefs.append(el.get_attribute("href"))
+
+    print (list_of_hrefs)
+
+    #Removing all unwanted characters in the link list
+    try:
+        regex = re.compile(r'^tel:')
+        href=[x for x in list_of_hrefs if not regex.match(x)]
+    except:
+        list_of_hrefs=list(filter(None,list_of_hrefs))
+        regex = re.compile(r'^tel:')
+        href=[x for x in list_of_hrefs if not regex.match(x)]
+    finally:
+        print (len(href))
+```    
+<img src="{{ site.url }}{{ site.baseurl }}/images/PhyscianReviews/figure4.png">
