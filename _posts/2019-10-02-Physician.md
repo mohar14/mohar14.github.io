@@ -103,4 +103,4 @@ Now for each page, I store the urls of the individual doctor's page in another l
     finally:
         print (len(href))
 ```    
-<img src="{{ site.url }}{{ site.baseurl }}/images/PhyscianReviews/figure4.png">
+<img src="{{ site.url }}{{ site.baseurl }}/images/PhyscianReviews/figure5.png">
