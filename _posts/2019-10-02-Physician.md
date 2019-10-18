@@ -104,7 +104,7 @@ Now for each page, I store the urls of the individual doctor's page in another l
 ```    
 <img src="{{ site.url }}{{ site.baseurl }}/images/PhyscianReviews/figure5.png">
 
-Once I have all the corrected links, I iterate through them and scrape the demographic information by inspecting the correct html tag and store them in their respective lists. Below I build an udf combining all these commands. 
+Once I have all the corrected links, I iterate through them and scrape the demographic information by inspecting the correct html tag and store them in their respective lists. Below I build an udf combining all these commands. Note while iterating through the *age* of an Physician I have a selenium common exception *NoSuchElementException* embedded to prevent the code from breaking in cases where the Physician does not have his/her age reported.   
 
 ```python
 def demoInfo(url):
