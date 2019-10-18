@@ -56,17 +56,17 @@ Getting the demographic information from a Doctor's page is relatively straight-
 
 First we create empty lists where we will store our scraped data.
 
-```Python
+```python
 name=[]
 gender=[]
 age=[]
 score=[]
 metaReview=[]
 ```
-Next I use selenium's *.get* command navigate to the page we are scraping. After reaching the page I would like to loop over multiple pages. The following chunk of code does exactly that. Not only does it loop over all pages but also stores the url for each page in list which will come quite handy later on.
+Next I use selenium's *.get* command navigate to the page we are scraping. After reaching the page I would like to loop over multiple pages. The following chunk of code does exactly that. Not only does it loop over all pages but also stores the url for each page in a list.
 
-```Python
-url=driver.get("https://www.healthgrades.com/usearch?what=Obstetrics%20%26%20Gynecology&entityCode=PS574&searchType=PracticingSpeciality&spec=45&where=NY&pageNum=1&isStandalone=undefined&state=NY&source=Solr&isStateOnly=true")
+```python
+url=driver.get("pageurl")
 
 pageLinks=[]
 
@@ -75,4 +75,4 @@ for i in range(11):
     source=driver.current_url
     pageLinks.append(source)
     time.sleep(2)
-``` 
+```
