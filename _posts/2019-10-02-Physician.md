@@ -44,6 +44,10 @@ You would also need to download and extract the latest [chromedriver](https://ch
 chrome_path = "yourpathtochromedriver/chromedriver.exe"
 driver = webdriver.Chrome(chrome_path)
 ```
-Lets first understand the scope of this process. I would like my scraper to automatically scrape demographic information and reviews for individual doctors from [Healthgrades](https://www.healthgrades.com). The following screenshot shows the search results for all doctors in Obstetrics and Gynaecology in Illinois. I want my scraper to loop over all the search results automatically and for each doctor collect the required information.
+Lets first understand the scope of this process. I would like my scraper to automatically scrape demographic information and reviews for individual doctors from [Healthgrades](https://www.healthgrades.com). The following screenshot shows the search results for all doctors in Obstetrics and Gynaecology in Illinois. I want my scraper to loop over all the search results which spans across multiple pages and for each page collect the required information for all the doctors listed.
 
 <img src="{{ site.url }}{{ site.baseurl }}/images/PhyscianReviews/figure3.png">
+
+The individual page of a doctor presents another level of complexity, for some doctors all of their reviews are not present on the landing page. The following screenshot shows an example, the scraper would need to click on *show more reviews* until all reviews are shown on the page. Even with individual reviews there are cases where the scraper would have to click on the *read more* option to see the full length review.  
+
+<img src="{{ site.url }}{{ site.baseurl }}/images/PhyscianReviews/figure4.png"> 
