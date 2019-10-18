@@ -50,4 +50,29 @@ Lets first understand the scope of this process. I would like my scraper to auto
 
 The individual page of a doctor presents another level of complexity, for some doctors all of their reviews are not present on the landing page. The following screenshot shows an example, the scraper would need to click on *show more reviews* until all reviews are shown on the page. Even with individual reviews there are cases where the scraper would have to click on the *read more* option to see the full length review.  
 
-<img src="{{ site.url }}{{ site.baseurl }}/images/PhyscianReviews/figure4.png"> 
+<img src="{{ site.url }}{{ site.baseurl }}/images/PhyscianReviews/figure4.png">
+
+Getting the demographic information from a Doctor's page is relatively straight-forward and thus we will first tackle this problem by creating an user defined function(udf). Later on we will create another UDF to scrape the reviews.
+
+First we create empty lists where we will store our scraped data.
+
+```Python
+name=[]
+gender=[]
+age=[]
+score=[]
+metaReview=[]
+```
+Next I use selenium's *.get* command navigate to the page we are scraping. After reaching the page I would like to loop over multiple pages. The following chunk of code does exactly that. Not only does it loop over all pages but also stores the url for each page in list which will come quite handy later on.
+
+```Python
+url=driver.get("https://www.healthgrades.com/usearch?what=Obstetrics%20%26%20Gynecology&entityCode=PS574&searchType=PracticingSpeciality&spec=45&where=NY&pageNum=1&isStandalone=undefined&state=NY&source=Solr&isStateOnly=true")
+
+pageLinks=[]
+
+for i in range(11):
+    driver.find_element_by_xpath("//a[@data-hgoname='next page']").click()
+    source=driver.current_url
+    pageLinks.append(source)
+    time.sleep(2)
+``` 
