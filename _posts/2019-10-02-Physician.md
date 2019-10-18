@@ -79,7 +79,6 @@ for i in range(11):
 Now for each page, I store the urls of the individual doctor's page in another list. I use a regular expression to remove all unwanted characters from this list of links. I will use this list to iterate through each Physician's page to collect the demographic information and reviews.
 
 ```python
-
 #Getting all the individual doctor page links
     list_of_hrefs = []
 
@@ -104,3 +103,60 @@ Now for each page, I store the urls of the individual doctor's page in another l
         print (len(href))
 ```    
 <img src="{{ site.url }}{{ site.baseurl }}/images/PhyscianReviews/figure5.png">
+
+Once I have all the corrected links, I iterate through them and scrape the demographic information by inspecting the correct html tag and store them in their respective lists. Below I build an udf combining all these commands. 
+
+```python
+def demoInfo(url):
+
+    #Getting all the individual doctor page links
+    list_of_hrefs = []
+
+    doctor_list = driver.find_elements_by_class_name("uCard")
+
+    for block in doctor_list:
+        elements = block.find_elements_by_tag_name("a")
+        for el in elements:
+            list_of_hrefs.append(el.get_attribute("href"))
+
+    print (list_of_hrefs)
+
+    #Removing all unwanted characters in the link list
+    try:
+        regex = re.compile(r'^tel:')
+        href=[x for x in list_of_hrefs if not regex.match(x)]
+    except:
+        list_of_hrefs=list(filter(None,list_of_hrefs))
+        regex = re.compile(r'^tel:')
+        href=[x for x in list_of_hrefs if not regex.match(x)]
+    finally:
+        print (len(href))
+
+
+    for i in range(len(href)):
+        time.sleep(1)
+        driver.get(href[i])
+
+        x=driver.find_element_by_tag_name("h1")
+        name.append(x.text)
+
+        try:
+            s=driver.find_element_by_xpath("//p[@class='score']")
+            score.append(s.text)
+        except:
+            score.append(0)
+
+        y=driver.find_element_by_xpath("//span[@data-qa-target='ProviderDisplayGender']")
+        gender.append(y.text)
+
+        try:
+            z=driver.find_element_by_xpath("//span[@data-qa-target='ProviderDisplayAge']")
+            age.append(z.text)
+        except NoSuchElementException:
+            age.append(1)
+
+    print (len(name))
+    print (len(age))
+    print (len(gender))
+    print (len(score))
+  ```
